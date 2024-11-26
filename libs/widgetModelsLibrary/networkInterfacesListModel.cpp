@@ -38,11 +38,11 @@ static std::unordered_map<la::networkInterface::Interface::Type, QIcon> s_cached
 NetworkInterfacesListModel::NetworkInterfacesListModel(bool const addOfflineInterface) noexcept
 	: _model{ hive::modelsLibrary::NetworkInterfacesModel{ this, addOfflineInterface } }
 {
-	connect(QGuiApplication::styleHints(), &QStyleHints::colorSchemeChanged, this,
-		[](Qt::ColorScheme /*scheme*/)
-		{
-			s_cachedIcons.clear();
-		});
+//	connect(QGuiApplication::styleHints(), &QStyleHints::colorSchemeChanged, this,
+//		[](Qt::ColorScheme /*scheme*/)
+//		{
+//			s_cachedIcons.clear();
+//		});
 }
 
 bool NetworkInterfacesListModel::isEnabled(QString const& id) const noexcept

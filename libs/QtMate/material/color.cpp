@@ -891,7 +891,8 @@ bool isDarkColorScheme()
 	}
 
 	// If no application property, check the style hints
-	return QGuiApplication::styleHints()->colorScheme() == Qt::ColorScheme::Dark;
+    return false;
+	//return QGuiApplication::styleHints()->colorScheme() == Qt::ColorScheme::Dark;
 }
 
 QColor disabledForegroundColor()

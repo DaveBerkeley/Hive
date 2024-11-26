@@ -1037,14 +1037,14 @@ void MainWindowImpl::connectSignals()
 #endif // USE_SPARKLE
 
 	// Color Scheme changed
-	connect(QGuiApplication::styleHints(), &QStyleHints::colorSchemeChanged, this,
-		[this](Qt::ColorScheme scheme)
-		{
-			auto const* const settings = qApp->property(settings::SettingsManager::PropertyName).value<settings::SettingsManager*>();
-			auto const themeColorIndex = settings->getValue(settings::General_ThemeColorIndex.name).toInt();
-			auto const colorName = qtMate::material::color::Palette::name(themeColorIndex);
-			updateStyleSheet(colorName, ":/style.qss");
-		});
+//	connect(QGuiApplication::styleHints(), &QStyleHints::colorSchemeChanged, this,
+//		[this](Qt::ColorScheme scheme)
+///		{
+//			auto const* const settings = qApp->property(settings::SettingsManager::PropertyName).value<settings::SettingsManager*>();
+//			auto const themeColorIndex = settings->getValue(settings::General_ThemeColorIndex.name).toInt();
+//			auto const colorName = qtMate::material::color::Palette::name(themeColorIndex);
+//			updateStyleSheet(colorName, ":/style.qss");
+//		});
 }
 
 void MainWindowImpl::showChangeLog(QString const title, QString const versionString)

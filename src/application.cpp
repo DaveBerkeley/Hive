@@ -35,14 +35,14 @@ HiveApplication::HiveApplication(int& argc, char** argv)
 	}
 
 	// Set color scheme based on the current system color scheme
-	setIsDarkColorScheme(QGuiApplication::styleHints()->colorScheme() == Qt::ColorScheme::Dark);
+	//setIsDarkColorScheme(QGuiApplication::styleHints()->colorScheme() == Qt::ColorScheme::Dark);
 
 	// Color Scheme changed
-	connect(QGuiApplication::styleHints(), &QStyleHints::colorSchemeChanged, this,
-		[this](Qt::ColorScheme scheme)
-		{
-			setIsDarkColorScheme(scheme == Qt::ColorScheme::Dark);
-		});
+//	connect(QGuiApplication::styleHints(), &QStyleHints::colorSchemeChanged, this,
+//		[this](Qt::ColorScheme scheme)
+//		{
+//			setIsDarkColorScheme(scheme == Qt::ColorScheme::Dark);
+//		});
 
 	// Install the event filter to catch macOS FileOpen events
 	installEventFilter(this);
@@ -77,7 +77,7 @@ bool HiveApplication::isDarkPaletteSupported() const noexcept
 void HiveApplication::setStyleName(QString const& styleName) noexcept
 {
 	checkStyleName(styleName);
-	setIsDarkColorScheme(QGuiApplication::styleHints()->colorScheme() == Qt::ColorScheme::Dark);
+//	setIsDarkColorScheme(QGuiApplication::styleHints()->colorScheme() == Qt::ColorScheme::Dark);
 	setStyle(styleName);
 }
 
